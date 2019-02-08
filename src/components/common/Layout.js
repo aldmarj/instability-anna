@@ -9,6 +9,9 @@ import config from '../../utils/siteConfig'
 
 // Styles
 import '../../styles/app.css'
+import '../../styles/home-header.css'
+
+import Particle from '../design/ParticleComponent'
 
 /**
 * Main layout component
@@ -34,7 +37,10 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
             <div className="viewport-top">
                 {/* The main header section on top of the screen */}
-                <header className="site-head">
+                <header className="site-head header-style">
+                    <div className="stars">
+                        <Particle/>
+                    </div>
                     <div className="container">
                         <div className="site-mast">
                             <div className="site-mast-left">
@@ -52,9 +58,11 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                             </div>
                         </div>
                         { isHome ?
-                            <div className="site-banner">
-                                <h1 className="site-banner-title">{site.title}</h1>
-                                <p className="site-banner-desc">{site.description}</p>
+                            <div className="">
+                                <div className="site-banner">
+                                    <h1 className="site-banner-title neon">{site.title}</h1>
+                                    <p className="site-banner-desc">{site.description}</p>
+                                </div> 
                             </div> :
                             null}
                         <nav className="site-nav">
